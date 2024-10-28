@@ -1,0 +1,159 @@
+body {
+    font-family: "Slabo 27px", serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.wanderlust {
+    display: flex;
+    flex-wrap: wrap;
+    color: #ff385c;
+    font-weight: 900;
+    font-size: 1.6rem;
+}
+
+.container{
+    flex: 1;
+}
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: #ff385c;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+.container {
+    margin-top: 2rem;
+}
+
+/* footer */
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+    margin-right: 0.5rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links, .f-info-socials, .f-info-company {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.f-info-socials i:hover{
+    cursor: pointer;
+    color: blueviolet;
+    font-size: 2rem;
+}
+
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* card */
+
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    margin-bottom: 1rem;
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+/* card effect */
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* new template */
+
+.add-btn {
+    background-color: #ff385c !important;
+    border: none !important;
+}
+
+/* edit template */
+
+.edit-btn {
+    background-color: #ff385c !important;
+    border: none !important;
+}
+
+/* show template */
+
+
+.show-title {
+    font-size: 2rem;
+}
+
+.show-location {
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.show-img {
+    height: 30vh;
+}
+
+.btns {
+    display: flex;
+}
+
+.img-edit {
+    height: 15rem !important;
+    width: 15rem !important;
+}
+
+#map {
+    height: 25rem;
+    width: 50rem;
+}

@@ -1,0 +1,239 @@
+<% layout("layouts/boilerplate.ejs") %>
+<style>
+    #filter {
+        display: flex;
+        text-wrap: wrap;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .filter {
+        text-align: center;
+        margin-right: 2.5rem;
+        opacity: 0.6;
+    }
+    .filter:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .filter p {
+        font-size: 0.8rem;
+    }
+    .tax-info {
+        display: none;
+    }
+
+    .tax-toggle {
+        border: 0.2rem groove gray;
+        border-radius: 1rem;
+        height: 3.25rem;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+</style>
+<body>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <a href="/listings?category=Icons">
+                <div class="filter">
+                    <div><i class="fa-solid fa-ticket"></i></div>
+                    <p>Icons</p>
+                </div>
+            </a>
+            <a href="/listings?category=Trendings">
+                <div class="filter">
+                    <div><i class="fa-solid fa-fire"></i></div>
+                    <p>Trendings</p>
+                </div>
+            </a>
+            <a href="/listings?category=New">
+                <div class="filter">
+                    <div><i class="fa-solid fa-key"></i></div>
+                    <p>New</p>
+                </div>
+            </a>
+            <a href="/listings?category=Boats">
+                <div class="filter">
+                    <div><i class="fa-solid fa-sailboat"></i></div>
+                    <p>Boats</p>
+                </div>
+            </a>
+            <a href="/listings?category=Castles">
+                <div class="filter">
+                    <div><i class="fa-solid fa-chess-rook"></i></div>
+                    <p>Castles</p>
+                </div>
+            </a>
+            <a href="/listings?category=Beachfront">
+                <div class="filter">
+                    <div><i class="fa-solid fa-umbrella-beach"></i></div>
+                    <p>Beachfront</p>
+                </div>
+            </a>
+            <a href="/listings?category=Arctic">
+                <div class="filter">
+                    <div><i class="fa-solid fa-snowflake"></i></div>
+                    <p>Arctic</p>
+                </div>
+            </a>
+            <a href="/listings?category=Amazing pools">
+                <div class="filter">
+                    <div><i class="fa-solid fa-person-swimming"></i></div>
+                    <p>Amazing pools</p>
+                </div>
+            </a>
+            <a href="/listings?category=Amazing views">
+                <div class="filter">
+                    <div><i class="fa-solid fa-panorama"></i></div>
+                    <p>Amazing views</p>
+                </div>
+            </a>
+            <a href="/listings?category=Top of the world">
+                <div class="filter">
+                    <div><i class="fa-solid fa-mountain"></i></div>
+                    <p>Top of the world</p>
+                </div>
+            </a>
+            <a href="/listings?category=Mansions">
+                <div class="filter">
+                    <div><i class="fa-solid fa-monument"></i></div>
+                    <p>Mansions</p>
+                </div>
+            </a>
+            <a href="/listings?category=Rooms">
+                <div class="filter">
+                    <div><i class="fa-solid fa-bed"></i></div>
+                    <p>Rooms</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div id="filter" class="navbar navbar-expand-lg border-bottom mb-3 mt-3">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <a href="/listings?category=Icons">
+                <div class="filter">
+                    <div><i class="fa-solid fa-ticket"></i></div>
+                    <p>Icons</p>
+                </div>
+            </a>
+            <a href="/listings?category=Trendings">
+                <div class="filter">
+                    <div><i class="fa-solid fa-fire"></i></div>
+                    <p>Trendings</p>
+                </div>
+            </a>
+            <a href="/listings?category=New">
+                <div class="filter">
+                    <div><i class="fa-solid fa-key"></i></div>
+                    <p>New</p>
+                </div>
+            </a>
+            <a href="/listings?category=Boats">
+                <div class="filter">
+                    <div><i class="fa-solid fa-sailboat"></i></div>
+                    <p>Boats</p>
+                </div>
+            </a>
+            <a href="/listings?category=Castles">
+                <div class="filter">
+                    <div><i class="fa-solid fa-chess-rook"></i></div>
+                    <p>Castles</p>
+                </div>
+            </a>
+            <a href="/listings?category=Beachfront">
+                <div class="filter">
+                    <div><i class="fa-solid fa-umbrella-beach"></i></div>
+                    <p>Beachfront</p>
+                </div>
+            </a>
+            <a href="/listings?category=Arctic">
+                <div class="filter">
+                    <div><i class="fa-solid fa-snowflake"></i></div>
+                    <p>Arctic</p>
+                </div>
+            </a>
+            <a href="/listings?category=Amazing pools">
+                <div class="filter">
+                    <div><i class="fa-solid fa-person-swimming"></i></div>
+                    <p>Amazing pools</p>
+                </div>
+            </a>
+            <a href="/listings?category=Amazing views">
+                <div class="filter">
+                    <div><i class="fa-solid fa-panorama"></i></div>
+                    <p>Amazing views</p>
+                </div>
+            </a>
+            <a href="/listings?category=Top of the world">
+                <div class="filter">
+                    <div><i class="fa-solid fa-mountain"></i></div>
+                    <p>Top of the world</p>
+                </div>
+            </a>
+            <a href="/listings?category=Mansions">
+                <div class="filter">
+                    <div><i class="fa-solid fa-monument"></i></div>
+                    <p>Mansions</p>
+                </div>
+            </a>
+            <a href="/listings?category=Rooms">
+                <div class="filter">
+                    <div><i class="fa-solid fa-bed"></i></div>
+                    <p>Rooms</p>
+                </div>
+            </a>
+        </div>
+        <div class="tax-toggle ms-auto">
+            <div class="form-check-reverse form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+              </div>
+        </div>
+    </div>
+
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <% for(let listing of allListings) { %>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="card col listing-card">
+                    <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_images" style="height: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        <b><%= listing.title %></b> <br>
+                        &#8377;<%= listing.price ? listing.price.toLocaleString("en-IN") : '1200' %>&nbsp;&#8725;&nbsp;night
+                        <i class="tax-info">&nbsp;&nbsp;+18% GST</i>
+                      </p>
+                    </div>
+                </div>
+            </a>
+            <% } %>
+    </div>
+</body>
+
+<script>
+    let taxToggle = document.getElementById("flexSwitchCheckDefault");
+    taxToggle.addEventListener("click", () => {
+        let taxInfo = document.getElementsByClassName("tax-info");
+        for(info of taxInfo) {
+            if(info.style.display != "inline"){
+                info.style.display = "inline";
+            } else {
+                info.style.display = "none";
+            }
+        };
+    })
+</script>
