@@ -15,7 +15,6 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
-const favicon = require("serve-favicon");
 
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
@@ -36,7 +35,6 @@ async function main() {
     await mongoose.connect(dbUrl);
 }
 
-app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.json()); 
