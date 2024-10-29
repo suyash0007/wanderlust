@@ -21,7 +21,7 @@
   }
 </style>
 
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
   <div class="container-fluid">
     <div class="wanderlust-icon">
       <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass d-inline-block align-text-top"></i>
@@ -44,21 +44,7 @@
           <input class="form-control me-2 search-inp" type="search" name="search" placeholder="Search Destinations" aria-label="Search">
           <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
         </form>
-      </div>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasMenuLabel" style="display: inline;"><i class="fa-solid fa-user"></i>Profile</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <% if(!currUser) { %>
-            <a class="nav-link" href="/signup"><strong><em>Sign Up</em></strong></a>
-            <a class="nav-link" href="/login"><strong><em>Log in</em></strong></a>
-          <% } %> <% if(currUser) { %>
-            <a class="nav-link" href="/logout"><strong><em>Sign Out</em></strong></a>
-          <% } %>
-        </div>
-      </div>      
+      </div>   
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new"><b>Airbnb your home</b></a> 
         <% if(!currUser) { %>
