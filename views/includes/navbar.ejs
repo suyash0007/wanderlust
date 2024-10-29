@@ -55,6 +55,26 @@
         <% } %>
       </div>
     </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Wanderlust</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/listings"><strong><em>Explore</em></strong></a>
+          <a class="nav-link" href="/listings/new"><b>Airbnb your home</b></a> 
+          <% if(!currUser) { %>
+            <a class="nav-link" href="/signup"><strong><em>Sign Up</em></strong></a>
+            <a class="nav-link" href="/login"><strong><em>Log in</em></strong></a>
+          <% } %> 
+          <% if(currUser) { %>
+            <a class="nav-link" href="/logout"><strong><em>Sign Out</em></strong></a>
+          <% } %>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
 
