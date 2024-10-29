@@ -7,7 +7,12 @@ module.exports.indexListings = async (req, res) => {
     let searchQuery = req.query.search;
     let allListings;
     if(searchQuery) {
-        allListings = await Listing.find({title: {$regex: searchQuery, $options: "i"}});    
+        allListings = await Listing.find({
+            $or: [
+                { title: { $regex: searchQuery, $options: 'i' } },
+                { location: { $regex: searchQuery, $options: 'i' } },
+            ]
+        });    
     } else if (cate) {
         allListings = await Listing.find({category: cate});
     } else {
