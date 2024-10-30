@@ -39,16 +39,23 @@ module.exports.showListingDetails = async (req, res) => {
 module.exports.createNewListing = async (req, res) => {
     const  address  = req.body.listing.location;
     const nominatimUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(address)}&format=json&limit=1`;
-    const response = await axios.get(nominatimUrl);
+    const response = await axios.get(nominatimUrl, {
+        headers: {"User-Agent": "YourAppName"}
+    });
+    if (response.data.length === 0) {
+        throw new ExpressError(400, "Unable to geocode the provided address");
+    }
     const lat = response.data[0].lat;
     const lon = response.data[0].lon;
     const category = req.body.listing.category;
 
-    let url = req.file.path;
-    let filename = req.file.filename;
-    const newListing = new Listing(...req.body.listing);
+    if (req.file && typeof req.file !== "undefined") {
+        let url = req.file.path;
+        let filename = req.file.filename;
+        newListing.image = { url, filename };
+    }
+    const newListing = new Listing(req.body.listing);
     newListing.owner = req.user._id;
-    newListing.image = { url, filename };
     newListing.coordinates = { address, lat, lon };
     newListing.category = category;
     let savedListing = (await newListing.save());
