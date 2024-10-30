@@ -49,12 +49,12 @@ module.exports.createNewListing = async (req, res) => {
     const lon = response.data[0].lon;
     const category = req.body.listing.category;
 
+    const newListing = new Listing(req.body.listing);
     if (req.file && typeof req.file !== "undefined") {
         let url = req.file.path;
         let filename = req.file.filename;
         newListing.image = { url, filename };
     }
-    const newListing = new Listing(req.body.listing);
     newListing.owner = req.user._id;
     newListing.coordinates = { address, lat, lon };
     newListing.category = category;
